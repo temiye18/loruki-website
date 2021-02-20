@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 :root {
   --primary-color: #047aed;
@@ -16,7 +16,7 @@
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   color: #333;
   line-height: 1.6;
 }
@@ -24,6 +24,7 @@ body {
 ul {
   list-style-type: none;
 }
+
 a {
   text-decoration: none;
   color: #333;
@@ -55,7 +56,8 @@ pre {
   visibility: hidden;
   height: 0;
 }
-/* NAV BAR STYLING */
+
+/* Navbar */
 .navbar {
   background-color: var(--primary-color);
   color: #fff;
@@ -73,13 +75,14 @@ pre {
 }
 
 .navbar a:hover {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px #fff solid;
 }
+
 .navbar .flex {
   justify-content: space-between;
 }
 
-/* SHOWCASE */
+/* Showcase */
 .showcase {
   height: 400px;
   background-color: var(--primary-color);
@@ -97,7 +100,7 @@ pre {
 
 .showcase .grid {
   overflow: visible;
-  grid-template-columns: 55% 45%;
+  grid-template-columns: 55% auto;
   gap: 30px;
 }
 
@@ -120,8 +123,8 @@ pre {
   margin: 30px 0;
 }
 
-.showcase-form input[type="text"],
-.showcase-form input[type="email"] {
+.showcase-form input[type='text'],
+.showcase-form input[type='email'] {
   border: 0;
   border-bottom: 1px solid #b4becb;
   width: 100%;
@@ -135,7 +138,7 @@ pre {
 
 .showcase::before,
 .showcase::after {
-  content: "";
+  content: '';
   position: absolute;
   height: 100px;
   bottom: -70px;
@@ -143,9 +146,12 @@ pre {
   left: 0;
   background: #fff;
   transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
 }
 
-/* STATS */
+/* Stats */
 .stats {
   padding-top: 100px;
   animation: slideInFromBottom 1s ease-in;
@@ -165,7 +171,7 @@ pre {
   font-weight: bold;
 }
 
-/* CLI */
+/* Cli */
 .cli .grid {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -176,15 +182,15 @@ pre {
   grid-row: 1 / span 2;
 }
 
-/* CLOUD */
+/* Cloud */
 .cloud .grid {
   grid-template-columns: 4fr 3fr;
 }
 
-/* LANGUAGES */
+/* Languages */
+
 .languages .flex {
   flex-wrap: wrap;
-  overflow: visible;
 }
 
 .languages .card {
@@ -202,7 +208,7 @@ pre {
   transform: translateY(-15px);
 }
 
-/* FEATURES */
+/* Features */
 .features-head img,
 .docs-head img {
   width: 200px;
@@ -230,16 +236,7 @@ pre {
   grid-column: 1 / span 2;
 }
 
-/* DOCS MAIN */
-
-.docs-main a {
-  color: #333;
-}
-
-.my-docs {
-  height: 850px;
-}
-
+/* Docs */
 .docs-main h3 {
   margin: 20px 0;
 }
@@ -260,50 +257,54 @@ pre {
   font-weight: bold;
 }
 
-/* FOOTER */
-.footer {
-  height: 221px;
-}
+/* Footer */
 .footer .social a {
   margin: 0 10px;
 }
 
-/* ANIMATIONS */
+/* Animations */
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-100%);
   }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInFromRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInFromTop {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes slideInFromBottom {
-  0% {
-    transform: translateY(100%);
-  }
+
   100% {
     transform: translateX(0);
   }
 }
 
-/* MEDIA QUERIES */
-@media screen and (max-width: 768px) {
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
   .grid,
   .showcase .grid,
   .stats .grid,
@@ -341,6 +342,7 @@ pre {
   .docs-head {
     text-align: center;
   }
+
   .features-head img,
   .features-sub-head img,
   .docs-head img {
@@ -353,7 +355,8 @@ pre {
   }
 }
 
-@media screen and (max-width: 500px) {
+/* Mobile */
+@media (max-width: 500px) {
   .navbar {
     height: 110px;
   }
@@ -365,5 +368,9 @@ pre {
   .navbar ul {
     padding: 10px;
     background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .showcase-form {
+    width: 300px;
   }
 }
